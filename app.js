@@ -4,7 +4,11 @@ const mongoose = require('mongoose');
 
 const feeRoutes = require('./routes/fee');
 
+const MONGODB_URI = 
+'mongodb+srv://Oladimx:bighead101DIMX@cluster0.9qrx1.mongodb.net/test'
+
 const app = express();
+
 
 //application.json
 app.use(bodyParser.json());
@@ -20,9 +24,9 @@ app.use((req, res, next) => {
 // routes
 app.use('/', feeRoutes);
 
-mongoose.connect(
-    'mongodb+srv://Oladimx:<password>@cluster0.9qrx1.mongodb.net/test' // input monogodb link
-).then(result => {
-    app.listen(8080);
+mongoose.
+connect(MONGODB_URI)
+.then(result => {
+    app.listen(process.env.PORT || 3000);
 })
 .catch(err => console.log(err));
