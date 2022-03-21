@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 app.use('/', feeRoutes);
 
 mongoose.connect(
-    'mongodb+srv://Oladimx:bighead101DIMX@cluster0.9qrx1.mongodb.net/test'
+    'mongodb+srv://Oladimx:<password>@cluster0.9qrx1.mongodb.net/test' // input monogodb link
 ).then(result => {
     app.listen(8080);
 })
